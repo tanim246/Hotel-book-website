@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotel Book</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body class="bg-gray-200">
     <!-- Navbar -->
     <nav class="bg-[#0014A9] min-h-[300px] space-y-12 pt-4">
       <div
-        class="flex justify-between items-center text-white border-b pb-1 max-w-5xl mx-auto px-4"
+        class="flex flex-col sm:flex-row justify-between items-center text-white border-b pb-1 max-w-5xl mx-auto px-4"
       >
         <h1 class="text-[22px] font-semibold">Hotel Book...</h1>
         <p>Premium Hotel Booking Platform</p>
       </div>
+
       <!-- input -->
       <div class="max-w-5xl text-white mx-auto px-4">
         <div>
@@ -23,6 +31,7 @@
             Low prices on hotels, homes and much more...
           </p>
         </div>
+
         <!-- search input -->
         <div
           class="bg-white text-black p-4 flex flex-wrap gap-4 justify-between mt-4 rounded-md shadow"
@@ -35,17 +44,20 @@
               placeholder="Enter the city"
             />
           </div>
-          <div class="flex flex-col flex-1 min-w-[180px]">
+          <div class="flex flex-col justify-center flex-1 min-w-[180px]">
             <label for="">Room Category</label>
-            <input
-              type="text"
+            <select
               class="border border-black mt-1 text-[16px] px-2 outline-[#0014A9] rounded-sm"
-              placeholder="Enter the category"
-            />
+            >
+              <option value="All Category">All Category</option>
+              <option value="Standard">Standard</option>
+              <option value="Deluxe">Deluxe</option>
+              <option value="Suite">Suite</option>
+            </select>
           </div>
-          <div class="flex items-end">
+          <div class="flex items-end justify-center">
             <button
-              class="bg-[#0014A9] px-4 text-white rounded-[6px] text-[14px] h-[38px] hover:bg-blue-800 transition-colors duration-300"
+              class="bg-[#0014A9] px-4 text-white rounded-[6px] text-[14px] h-[28px] hover:bg-blue-800 transition-colors duration-300"
             >
               Search Room
             </button>
@@ -54,107 +66,244 @@
       </div>
     </nav>
 
-    <!-- cards container -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mt-6 px-4">
-      <!-- single card -->
-      <div class="bg-white rounded-md overflow-hidden shadow w-full transform transition duration-300 hover:scale-105 hover:shadow-lg">
-        <img
-          src="./Images/room1.jpg"
-          alt="room1"
-          class="w-full h-auto rounded-t-md"
-        />
-        <div class="p-4">
-          <div class="flex justify-between items-center mb-2">
-            <p class="text-[12px] bg-sky-200 px-[6px] rounded-lg text-sky-900">
-              Standard
-            </p>
-            <p class="font-semibold text-xl">3,000 tk</p>
+    <main
+      class="flex flex-col-reverse sm:flex-row max-w-5xl mx-auto mt-6 space-x-5"
+    >
+      <!-- main cards content -->
+      <div class="space-x-4 w-[70%]">
+        <!-- cards container -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-md" onclick="handleclick(this)">
+            <div class="flex flex-col gap-2 items-center text-gray-500 mt-6">
+              <i class="fa-solid fa-city text-[28px]"></i>
+              <h1 class="font-semibold">Cox's Bazar</h1>
+            </div>
+            <div class="p-4">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <p
+                    class="text-[12px] bg-sky-200 px-[6px] rounded-lg text-sky-900"
+                  >
+                    Standard
+                  </p>
+                  <p class="font-semibold text-xl">3,000 tk</p>
+                </div>
+                <h1 class="font-semibold text-[16px]">Sea View Standard</h1>
+                <p class="text-[14px]">Cox's Bazar</p>
+              </div>
+              <div>
+                <button
+                  class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
           </div>
-          <h1 class="font-semibold text-[16px]">Sea View Standard</h1>
-          <p class="text-[14px]">Cox's Bazar</p>
-          <button
-            class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300"
-          >
-            Add to cart
-          </button>
-        </div>
-      </div>
 
-      <!-- Repeat 5 more cards -->
-      <div class="bg-white rounded-md overflow-hidden shadow w-full transform transition duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="./Images/room1.jpg" alt="room1" class="w-full h-auto rounded-t-md" />
-        <div class="p-4">
-          <div class="flex justify-between items-center mb-2">
-            <p class="text-[12px] bg-sky-200 px-[6px] rounded-lg text-sky-900">Standard</p>
-            <p class="font-semibold text-xl">3,000 tk</p>
+          <!-- Card 2 -->
+          <div class="bg-white rounded-md" onclick="handleclick(this)">
+            <div class="flex flex-col gap-2 items-center text-gray-500 mt-6">
+              <i class="fa-solid fa-city text-[28px]"></i>
+              <h1 class="font-semibold">Sylhet</h1>
+            </div>
+            <div class="p-4">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <p
+                    class="text-[12px] bg-purple-200 px-[6px] rounded-lg text-purple-900"
+                  >
+                    Deluxe
+                  </p>
+                  <p class="font-semibold text-xl">4,500 tk</p>
+                </div>
+                <h1 class="font-semibold text-[16px]">Hill View Deluxe</h1>
+                <p class="text-[14px]">Sylhet</p>
+              </div>
+              <div>
+                <button
+                  class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
           </div>
-          <h1 class="font-semibold text-[16px]">Sea View Standard</h1>
-          <p class="text-[14px]">Cox's Bazar</p>
-          <button class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300">
-            Add to cart
-          </button>
-        </div>
-      </div>
 
-      <div class="bg-white rounded-md overflow-hidden shadow w-full transform transition duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="./Images/room1.jpg" alt="room1" class="w-full h-auto rounded-t-md" />
-        <div class="p-4">
-          <div class="flex justify-between items-center mb-2">
-            <p class="text-[12px] bg-sky-200 px-[6px] rounded-lg text-sky-900">Standard</p>
-            <p class="font-semibold text-xl">3,000 tk</p>
+          <!-- Card 3 -->
+          <div class="bg-white rounded-md" onclick="handleclick(this)">
+            <div class="flex flex-col gap-2 items-center text-gray-500 mt-6">
+              <i class="fa-solid fa-city text-[28px]"></i>
+              <h1 class="font-semibold">Dhaka</h1>
+            </div>
+            <div class="p-4">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <p
+                    class="text-[12px] bg-green-200 px-[6px] rounded-lg text-green-900"
+                  >
+                    Suite
+                  </p>
+                  <p class="font-semibold text-xl">8,000 tk</p>
+                </div>
+                <h1 class="font-semibold text-[16px]">Luxury City Suite</h1>
+                <p class="text-[14px]">Dhaka</p>
+              </div>
+              <div>
+                <button
+                  class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
           </div>
-          <h1 class="font-semibold text-[16px]">Sea View Standard</h1>
-          <p class="text-[14px]">Cox's Bazar</p>
-          <button class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300">
-            Add to cart
-          </button>
-        </div>
-      </div>
 
-      <div class="bg-white rounded-md overflow-hidden shadow w-full transform transition duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="./Images/room1.jpg" alt="room1" class="w-full h-auto rounded-t-md" />
-        <div class="p-4">
-          <div class="flex justify-between items-center mb-2">
-            <p class="text-[12px] bg-sky-200 px-[6px] rounded-lg text-sky-900">Standard</p>
-            <p class="font-semibold text-xl">3,000 tk</p>
+          <!-- Card 4 -->
+          <div class="bg-white rounded-md" onclick="handleclick(this)">
+            <div class="flex flex-col gap-2 items-center text-gray-500 mt-6">
+              <i class="fa-solid fa-city text-[28px]"></i>
+              <h1 class="font-semibold">Sundarbans</h1>
+            </div>
+            <div class="p-4">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <p
+                    class="text-[12px] bg-yellow-200 px-[6px] rounded-lg text-yellow-900"
+                  >
+                    Standard
+                  </p>
+                  <p class="font-semibold text-xl">2,500 tk</p>
+                </div>
+                <h1 class="font-semibold text-[16px]">Forest View Standard</h1>
+                <p class="text-[14px]">Sundarbans</p>
+              </div>
+              <div>
+                <button
+                  class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
           </div>
-          <h1 class="font-semibold text-[16px]">Sea View Standard</h1>
-          <p class="text-[14px]">Cox's Bazar</p>
-          <button class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300">
-            Add to cart
-          </button>
-        </div>
-      </div>
 
-      <div class="bg-white rounded-md overflow-hidden shadow w-full transform transition duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="./Images/room1.jpg" alt="room1" class="w-full h-auto rounded-t-md" />
-        <div class="p-4">
-          <div class="flex justify-between items-center mb-2">
-            <p class="text-[12px] bg-sky-200 px-[6px] rounded-lg text-sky-900">Standard</p>
-            <p class="font-semibold text-xl">3,000 tk</p>
+          <!-- Card 5 -->
+          <div class="bg-white rounded-md" onclick="handleclick(this)">
+            <div class="flex flex-col gap-2 items-center text-gray-500 mt-6">
+              <i class="fa-solid fa-city text-[28px]"></i>
+              <h1 class="font-semibold">Saint Martin's Island</h1>
+            </div>
+            <div class="p-4">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <p
+                    class="text-[12px] bg-pink-200 px-[6px] rounded-lg text-pink-900"
+                  >
+                    Deluxe
+                  </p>
+                  <p class="font-semibold text-xl">5,500 tk</p>
+                </div>
+                <h1 class="font-semibold text-[16px]">Beachside Deluxe</h1>
+                <p class="text-[14px]">Saint Martin's Island</p>
+              </div>
+              <div>
+                <button
+                  class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
           </div>
-          <h1 class="font-semibold text-[16px]">Sea View Standard</h1>
-          <p class="text-[14px]">Cox's Bazar</p>
-          <button class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300">
-            Add to cart
-          </button>
-        </div>
-      </div>
 
-      <div class="bg-white rounded-md overflow-hidden shadow w-full transform transition duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="./Images/room1.jpg" alt="room1" class="w-full h-auto rounded-t-md" />
-        <div class="p-4">
-          <div class="flex justify-between items-center mb-2">
-            <p class="text-[12px] bg-sky-200 px-[6px] rounded-lg text-sky-900">Standard</p>
-            <p class="font-semibold text-xl">3,000 tk</p>
+          <!-- Card 6 -->
+          <div class="bg-white rounded-md" onclick="handleclick(this)">
+            <div class="flex flex-col gap-2 items-center text-gray-500 mt-6">
+              <i class="fa-solid fa-city text-[28px]"></i>
+              <h1 class="font-semibold">Rangamati</h1>
+            </div>
+            <div class="p-4">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <p
+                    class="text-[12px] bg-red-200 px-[6px] rounded-lg text-red-900"
+                  >
+                    Suite
+                  </p>
+                  <p class="font-semibold text-xl">7,500 tk</p>
+                </div>
+                <h1 class="font-semibold text-[16px]">Hilltop Suite</h1>
+                <p class="text-[14px]">Rangamati</p>
+              </div>
+              <div>
+                <button
+                  class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
           </div>
-          <h1 class="font-semibold text-[16px]">Sea View Standard</h1>
-          <p class="text-[14px]">Cox's Bazar</p>
-          <button class="bg-[#0014A9] mt-3 px-4 py-1 text-white rounded-[6px] text-[12px] w-full hover:bg-blue-800 transition-colors duration-300">
-            Add to cart
-          </button>
         </div>
       </div>
-    </div>
+      <!-- only sideber -->
+      <div class="sm:w-[30%]">
+        <!-- sidebar  start-->
+        <div class="space-y-4 bg-white rounded-md p-4">
+          <!-- select room -->
+          <div class="bg-gray-100 rounded-lg space-y-1 h-auto p-4">
+            <div class="flex justify-between">
+              <h1 class="font-semibold">Sea View Standard</h1>
+              <p class="font-semibold text-[#0014A9]">3,000 tk</p>
+            </div>
+            <div>
+              <p>Cox's Bazar</p>
+              <p
+                class="text-[12px] w-[60px] mt-2 bg-sky-200 px-[6px] rounded-lg text-sky-900"
+              >
+                Standard
+              </p>
+            </div>
+          </div>
+          <!-- apply -->
+          <div class="bg-gray-100 p-4">
+            <h1>Promo Code Optional</h1>
+            <div class="mt-2 flex">
+              <input
+                class="border rounded-l-md p-1 px-2 border-black flex-1"
+                type="text"
+                placeholder="Enter Promo Code"
+              />
+              <input
+                class="border border-black rounded-r-md p-1 w-[80px] bg-[#0014A9] text-white"
+                type="submit"
+                value="Apply"
+              />
+            </div>
+          </div>
+
+          <div class="bg-gray-100 p-4">
+            <div class="flex justify-between items-center">
+              <p>Discount:</p>
+              <p>0%</p>
+            </div>
+            <div class="flex justify-between items-center">
+              <p class="font-bold">Total:</p>
+              <p class="font-bold text-[#0014A9]">0,000 tk</p>
+            </div>
+            <div class="p-1">
+              <button
+                class="bg-[#0014A9] rounded-md text-white p-1 w-full mt-2"
+              >
+                Proceed Booking
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
+  <script src="./script.js"></script>
 </html>
